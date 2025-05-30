@@ -36,7 +36,6 @@ const TabIcon = ({ icon, text, focused }: TabIconProps) => {
             </View>
         )
     }
-
 }
 
 const _layout = () => {
