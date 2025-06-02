@@ -7,8 +7,8 @@ export default function RootLayout() {
         name="(tabs)" 
         options={{headerShown:false}}/>
       <Stack.Screen 
-        name="movie/[id]"
-        options={{headerShown:true, title: 'Movie Details'}}/>
+        name="movies/[id]"
+        options={{headerShown:false}}/>
     </Stack>
     ;
 }

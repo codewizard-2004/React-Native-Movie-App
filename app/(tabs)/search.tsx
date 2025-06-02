@@ -3,6 +3,7 @@ import SearchBar from '@/components/SearchBar'
 import { icons } from '@/constants/icons'
 import { images } from '@/constants/images'
 import { fetchMovies } from '@/services/api'
+import { updateSearchCount } from '@/services/appwrite'
 import useFetch from '@/services/useFetch'
 import { useRouter } from 'expo-router'
 import React, { useEffect, useState } from 'react'
@@ -24,7 +25,10 @@ const search = () => {
 
 
   useEffect(()=>{
-    
+    if (Array.isArray(movies) && movies.length > 0) {
+      console.log(true)
+      updateSearchCount(searchQuery, movies[0]);
+  }
     
     const timeoutId = setTimeout(async ()=>{
       if (searchQuery.trim()){
